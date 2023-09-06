@@ -1,0 +1,28 @@
+.main{
+    width: 1130px;
+    height: 594px;
+
+    margin: 120px 155px 160px 155px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.title{
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 56.25px;
+    color: #FFFFFF;
+
+    width: 965px;
+    height: 50px;
+}
+
+.hr{
+    width: 1130px;
+    height: 1px;
+    color: #2D2D2D;
+}

@@ -1,15 +1,15 @@
 import './App.css'
-import Content from './components/Content/Content'
+import Main from './components/Main/Main'
 
 
 function App() {
 
 
-    return <div className="main">
+    return <>
         
-        <Content/>
+        <Main/>
 
-    </div>
+    </>
 }
 
 export default App
