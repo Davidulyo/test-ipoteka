@@ -5,6 +5,10 @@
 
 body{
     background-color: #161616;
+    width: 1440px;
+    height: 1105px;
+    margin: 0 auto;
+    
 }
 
 input::-webkit-inner-spin-button {

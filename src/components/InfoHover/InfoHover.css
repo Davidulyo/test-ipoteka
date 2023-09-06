@@ -1,0 +1,33 @@
+.info-board{
+    position: relative;
+
+    width: 266px;
+    height: 308px;
+
+    top: 249px;
+    left: 192px;
+
+    padding: 4px 8px 4px 8px;
+
+    background-color: #41434E;
+
+}
+
+.info-board div{
+    font-family: 'Inter';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: #FFFFFF;
+}
+
+.info-board:before {
+    content: '';
+    position: absolute;
+    top: -6px; /* Adjust the distance from the top */
+    left: 20px; /* Adjust the distance from the left */
+    border-width: 0 6px 8px 6px; /* Set the width and height */
+    border-style: solid;
+    border-color: transparent transparent #41434E transparent;
+    transform: translateX(-50%);
+  }

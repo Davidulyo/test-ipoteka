@@ -1,0 +1,11 @@
+
+
+.bottom{
+    width: 1440px;
+    height: 120px;
+    border-top: 1px solid #2D2D2D;
+    padding: 32px 155px 32px 0px;
+
+    display: flex;
+    justify-content: flex-end;
+}
