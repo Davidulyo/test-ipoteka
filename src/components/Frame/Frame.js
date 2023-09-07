@@ -1,29 +1,41 @@
+import { useEffect, useState } from 'react'
 import WarningBoard from '../WarningBoard/WarningBoard'
 import './Frame.css'
+import { addCommas, checkNumber, removeCommas } from '../../helpFuncs/helpFuncs'
 
-function Frame({frameInfo}) {
+function Frame({info}) {
 
-    return frameInfo && <>
+    const [sum, setSum] = useState('1,000,000')
+    const [isWarning, setWarnings] = useState(false) 
+
+    const inputSumHandler = (number) => {
+        const pureNumber = removeCommas(number)
+        const isCorrect = checkNumber(pureNumber) 
+
+        if (isCorrect){
+          addCommas(pureNumber, setSum)
+          setWarnings(false)  
+        } else {
+            setWarnings(true)
+        }
+    }
+
+
+
+    return info && <>
 
         <div className='box-frame'>
 
-            <label className='label'>{frameInfo.label}</label>
+            <label className='label'>{info.label}</label>
         
-            {frameInfo.type === 'list' ? <><form className='frame' onChange={event => '#'}>
-                    <select className='input-price' id="city" name="city">
-                        {frameInfo.list.map( (item, i) => <option key={i+55}>{item}</option>)}
-                    </select>
-                </form>
-                <WarningBoard/>
-                </>
-            :
             <div className='frame'>
                 <div className='flex'>
-                    <input className='input-price' type='number' placeholder='Введите число' defaultValue={100000000}/>
+        
+                    <input className='input-price' onChange={e => inputSumHandler(e.target.value)} type='text' placeholder='Введите число' value={sum}/>
                     <h1 className='symbol'>₪</h1>
                 </div>
-                <WarningBoard/>
-            </div>}
+                {isWarning && <WarningBoard title={'Стоимость недвижимости не может превышать 10,000,000'}/>}
+            </div>
             
         </div>
         

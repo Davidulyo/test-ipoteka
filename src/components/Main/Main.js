@@ -2,6 +2,7 @@ import Bottom from '../Bottom/Bottom'
 import ButtonNext from '../ButtonNext/ButtonNext'
 import Frame from '../Frame/Frame'
 import InfoHover from '../InfoHover/InfoHover'
+import InputList from '../InputList/InputList'
 import WarningBoard from '../WarningBoard/WarningBoard'
 import './Main.css'
 
@@ -16,28 +17,28 @@ function Main() {
         </div>
 
         <div>
-            <div style={{justifyContent: 'space-between', display: 'flex', width: '1130px'}}>
-                <Frame frameInfo={{label: 'Стоимость недвижимости', type: 'sum'}}/>  
-                <Frame frameInfo={{label: 'Город покупки недвижимости', type: 'list', list: ['Тель-Авив', 'Ариэль', 'Акко']}}/>  
-                <Frame frameInfo={{label: 'Когда вы планируете оформить ипотеку?', type: 'list', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
+            <div style={{justifyContent: 'space-between', display: 'flex', width: '1130px', marginTop: '32px'}}>
+                <Frame info={{label: 'Стоимость недвижимости'}}/>  
+                <InputList info={{label: 'Город покупки недвижимости', list: ['Тель-Авив', 'Ариэль', 'Акко', "Выберите ответ"]}}/> 
+                <InputList info={{label: 'Когда вы планируете оформить ипотеку?', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', "Выберите период"]}}/>  
             </div>
             {/* <InfoHover/> */}
         </div>
 
         <div>
-            <div style={{justifyContent: 'space-between', display: 'flex', width: '1130px'}}>
-                <Frame frameInfo={{label: 'Когда вы планируете оформить ипотеку?', type: 'list', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
-                <Frame frameInfo={{label: 'Когда вы планируете оформить ипотеку?', type: 'list', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
-                <Frame frameInfo={{label: 'Когда вы планируете оформить ипотеку?', type: 'list', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
+            <div style={{justifyContent: 'space-between', display: 'flex', width: '1130px', marginTop: '32px'}}>
+                <Frame info={{label: 'Первоначальный взнос', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
+                <InputList info={{label: 'Тип недвижимости', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', "Выберите тип недвижимости"]}}/>  
+                <InputList info={{label: 'Вы уже владеете недвижимостью?', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', 'Выберите тип недвижимости']}}/>  
             </div>
         </div>
 
-        <hr className='hr'/>
+        <div className='hr'/>
 
         <div>
-            <div style={{alignSelf: 'flex-start', display: 'flex', width: '1130px'}}>
-                <Frame frameInfo={{label: 'Когда вы планируете оформить ипотеку?', type: 'list', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
-                <Frame frameInfo={{label: 'Когда вы планируете оформить ипотеку?', type: 'list', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
+            <div style={{alignSelf: 'flex-start', display: 'flex', width: '1130px', marginTop: '32px'}}>
+                <Frame info={{label: 'Cрок', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', 'В ближайшие 6 месяцев']}}/>  
+                <Frame info={{label: 'Ежемесячный платеж', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
             </div>
         </div>
 

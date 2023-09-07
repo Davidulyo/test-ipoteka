@@ -24,6 +24,14 @@
 
 .hr{
     width: 1130px;
-    height: 1px;
+    height: 5px;
     color: #2D2D2D;
+    border-top: 1px solid #2D2D2D;
+}
+
+@media (max-width: 390px){
+    
+    .main{
+        background-color: red;
+    }
 }
