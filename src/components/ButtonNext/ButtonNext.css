@@ -31,3 +31,11 @@
 
     color: #848484;
 }
+
+.btn-next:hover{
+    cursor: pointer;
+    transition: 0.3s;
+    background-color: #FBE54D;
+    color: #161616;
+    font-weight: 500;
+}
