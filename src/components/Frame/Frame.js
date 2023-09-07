@@ -30,7 +30,6 @@ function Frame({info}) {
         
             <div className='frame'>
                 <div className='flex'>
-        
                     <input className='input-price' onChange={e => inputSumHandler(e.target.value)} type='text' placeholder='Введите число' value={sum}/>
                     <h1 className='symbol'>₪</h1>
                 </div>

@@ -1,0 +1,59 @@
+
+.label-under-slider{
+    width: 320px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    color: #ffffff;
+
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 19.6px;
+
+    font-family: 'Inter';
+}
+
+
+
+.range-line{
+    color: #FBE54D;
+    background-color: #FBE54D;
+
+    border: none;
+    -webkit-appearance: none;
+    appearance: none;
+
+    height: 1px;
+
+    width: 310px;
+
+    position: relative;
+    top: -15px;
+    left: 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    color: #FBE54D;
+}
+
+
+input[type="range"]::-webkit-slider-thumb {
+    background-color: #FBE54D !important;  /* Blue color for WebKit (Chrome, Safari) */
+    color: #FBE54D;
+    
+  }
+  
+  input[type="range"]::-moz-range-thumb {
+    background-color: #FBE54D !important; /* Blue color for Mozilla Firefox */
+    color: #FBE54D;
+
+  }
+  
+  input[type="range"]::-ms-thumb {
+    background-color: #FBE54D !important; /* Blue color for Internet Explorer and Microsoft Edge */
+    color: #FBE54D;
+  }
+

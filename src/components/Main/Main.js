@@ -3,6 +3,7 @@ import ButtonNext from '../ButtonNext/ButtonNext'
 import Frame from '../Frame/Frame'
 import InfoHover from '../InfoHover/InfoHover'
 import InputList from '../InputList/InputList'
+import InputWithSlider from '../InputWithSlider/InputWithSlider'
 import WarningBoard from '../WarningBoard/WarningBoard'
 import './Main.css'
 
@@ -27,7 +28,7 @@ function Main() {
 
         <div className='box'>
             <div className='box-second' >
-                <Frame info={{label: 'Первоначальный взнос', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
+                <InputWithSlider info={{label: 'Первоначальный взнос', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
                 <InputList info={{label: 'Тип недвижимости', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', "Выберите тип недвижимости"]}}/>  
                 <InputList info={{label: 'Вы уже владеете недвижимостью?', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', 'Выберите тип недвижимости']}}/>  
             </div>
@@ -37,7 +38,7 @@ function Main() {
 
         <div className='box'>
             <div className='box-third'>
-                <Frame info={{label: 'Cрок', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', 'В ближайшие 6 месяцев']}}/>  
+                <InputWithSlider info={{label: 'Cрок', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца', 'В ближайшие 6 месяцев']}}/>  
                 <Frame info={{label: 'Ежемесячный платеж', list: ['В ближайший месяц', 'В ближайшие 2 месяца', 'В ближайшие 3 месяца']}}/>  
             </div>
         </div>
