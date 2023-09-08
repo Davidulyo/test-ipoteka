@@ -1,26 +1,49 @@
+import { useState } from 'react'
 import './InputWithSlider.css'
+import InfoHover from '../InfoHover/InfoHover';
+import { addCommas } from '../../helpFuncs/helpFuncs';
 
 function InputWithSlider({info}) {
 
     // const [isWarning, setWarnings] = useState(false) 
+    const [sliderPosition, setSliderPosition] = useState() 
+    const [showAdvise, setShowAdvise] = useState(false) 
+
+    // const [sum, setSum] = useState() 
+
+
+
+    const handler = (isOver) => {
+        
+        if (info.type && info.type === '!' && isOver){
+            if (showAdvise) return
+            setShowAdvise(true);
+        } else{
+            setShowAdvise(false);
+        }
+    }
+
+    const sliderHandler = (value) => {
+        addCommas(value, setSliderPosition)
+    }
 
 
     return <>
     
-    <div className='box-frame'>
+    <div className='box-frame slider-box'>
 
-            <label className='label'>{info.label}</label>
-        
+            <label onMouseOver={() => handler(true)} onMouseOut={() => handler(false)} id={`${info.type && info.type === '!'}` && 'advise'} className='label'>{info.label}</label>
+            {/* {showAdvise && <InfoHover/>} */}
             <div className='frame'>
                 <div className='flex'>
-                    <input className='input-price' type='text' placeholder='Введите число' />
+                    <input className='input-price' type='text' value={sliderPosition} placeholder='Введите число' />
                     <h1 className='symbol'>₪</h1>
                 </div>
                 {/* {isWarning && <WarningBoard title={'Стоимость недвижимости не может превышать 10,000,000'}/>} */}
-                <input name='slider' min={4} max={30} type="range" className='range-line'/>
+                <input name='slider' step={info.step} min={info.min} max={info.max} type="range" className='range-line' onChange={(e) => sliderHandler(e.target.value)}/>
                 <div className='label-under-slider'>
-                    <h4 htmlFor='slider'>4 year</h4>
-                    <h4 htmlFor='slider'>30 year</h4>
+                    <h4 htmlFor='slider'>{info.lowest}</h4>
+                    <h4 htmlFor='slider'>{info.highest}</h4>
                 </div>
                 
             </div>

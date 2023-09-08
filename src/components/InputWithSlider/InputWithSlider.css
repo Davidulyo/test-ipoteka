@@ -16,7 +16,15 @@
     font-family: 'Inter';
 }
 
+.slider-box{
+    width: 325px;
+}
 
+#advise:hover{
+    cursor: pointer;
+    transition: 0.3s;
+
+}
 
 .range-line{
     color: #FBE54D;

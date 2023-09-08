@@ -13,3 +13,21 @@ export const removeCommas = (number) => {
 export const checkNumber = (number) => {
     return number > 10000000 ? false : true;
 }
+
+
+
+export const getValuesOfFields = () => {
+    const fields = document.querySelectorAll('.input-price')
+    const fields2 = document.querySelectorAll('.input-list')
+    const arrayOfFields = [...fields, ...fields2]
+
+    const values = [];
+
+    for (let i = 0; i < arrayOfFields.length; i++) {
+        values.push(arrayOfFields[i].value);
+    }
+
+    return values;
+}
+
+
