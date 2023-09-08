@@ -15,7 +15,7 @@ function InputList({info}) {
                 {info.list.map( (item, i) => i < info.list.length-1 && <option key={i+55}>{item}</option>)}
             </select>
         </form>
-        <WarningBoard title={'Выберите ответ'}/>
+        {/* <WarningBoard title={'Выберите ответ'}/> */}
                 
     
     </div>

@@ -4,6 +4,7 @@ export const addCommas = (number, setSum) => {
     let parts = number.toString().split(".");
     parts[0] = parts[0].replace(/\B(?=(\d{3})+(?!\d))/g, ","); // снова обрамляем запятыми после каждого третьего знака, считая справа
     setSum(parts.join("."))
+    return parts.join(".")
 }
 
 export const removeCommas = (number) => {

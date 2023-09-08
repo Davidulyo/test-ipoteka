@@ -1,0 +1,22 @@
+.advise{
+    background-color: #242529;
+    padding: 6px 12px 6px 12px;
+    border-radius: 4px;
+
+    display: flex;
+    flex-direction: row;
+    margin-top: 12px;
+}
+
+.advise p{
+    font-family: 'Arial';
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    color: #FFFFFF;
+}
+
+.advise h4{
+    color: #FBE54D;
+    margin-right: 8px;
+}
