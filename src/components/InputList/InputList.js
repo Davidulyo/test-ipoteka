@@ -11,11 +11,12 @@ function InputList({info}) {
 
     
         <form className='frame '>
-            <select defaultValue={info.list[info.list.length-1]} className='input-list default-option' id="city" name="city" placeholder='Выберите город' >
+            <select className='input-list default-option' id="city" name="city" placeholder='Выберите город' >
                 {info.list.map( (item, i) => i < info.list.length-1 && <option key={i+55}>{item}</option>)}
+                <option selected>{info.list[info.list.length-1]}</option >
             </select>
         </form>
-        {/* <WarningBoard title={'Выберите ответ'}/> */}
+        <WarningBoard title={'Выберите ответ'}/>
                 
     
     </div>

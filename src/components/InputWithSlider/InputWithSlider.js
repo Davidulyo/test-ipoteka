@@ -3,28 +3,41 @@ import './InputWithSlider.css'
 import InfoHover from '../InfoHover/InfoHover';
 import { addCommas } from '../../helpFuncs/helpFuncs';
 import AdviseBoard from '../AdviseBoard/AdviseBoard';
+import { useDispatch, useSelector } from 'react-redux';
+import { changeFirstPayment, changeMonthlyPayment, changePeriod, changePropertyCost } from '../../redux/calcSlice';
 
 function InputWithSlider({info}) {
 
     // const [isWarning, setWarnings] = useState(false) 
     const [sliderPosition, setSliderPosition] = useState(info.default) 
     const [showAdvise, setShowAdvise] = useState(false) 
-
     // const [sum, setSum] = useState() 
 
+    const dispatch = useDispatch()
+    const state = useSelector(state => state.calcReducer.monthlyPayment)
+    console.log(state);
+
     const handler = (isOver) => {
-        
         if (info.type && info.type === '!' && isOver){
             if (showAdvise) return
             setShowAdvise(true);
-        } else{
+        } else {
             setShowAdvise(false);
         }
     }
-
+    
     const sliderHandler = (value) => {
         addCommas(value, setSliderPosition)
+        switch (info.default) {
+            // case 1000000: dispatch(changePropertyCost(value)); break;
+            case 100000: dispatch(changeFirstPayment(value)); break;
+            case 30: dispatch(changePeriod(value)); break;
+            case 2654: dispatch(changeMonthlyPayment(value)); break;
+            default: return;
+        }
     }
+
+
 
 
     return <>
@@ -38,7 +51,6 @@ function InputWithSlider({info}) {
                     <input className='input-price' type='text' value={sliderPosition} placeholder='Введите число' />
                     <h1 className='symbol'>₪</h1>
                 </div>
-                {/* {isWarning && <WarningBoard title={'Стоимость недвижимости не может превышать 10,000,000'}/>} */}
                 <input name='slider' step={info.step} min={info.min} defaultValue={info.default} max={info.max} type="range" className='range-line' onChange={(e) => sliderHandler(e.target.value)}/>
                 <div className='label-under-slider'>
                     <h4 htmlFor='slider'>{info.lowest}</h4>
